@@ -15,7 +15,9 @@
     },
     "dependencies": {
         "axios": "^0.18.0",
-        "vue": "^2.5.16",
+        "cross-env": "^5.1",
+        "laravel-mix": "^1.0",
+        "vue": "^2.5.9",
         "vue-router": "^3.0.1"
     }
 }

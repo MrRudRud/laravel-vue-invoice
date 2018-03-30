@@ -8,6 +8,4 @@ Route::get('/', function () {
 Route::get('/api/customers', 'CustomerController@search');
 Route::get('/api/products', 'ProductController@search');
 
-Route::get('/api/invoices', 'InvoiceController@index');
-Route::get('/api/invoices/create', 'InvoiceController@create');
-Route::get('/api/invoices/{id}/edit', 'InvoiceController@edit');
+Route::resource('/api/invoices', 'InvoiceController');
