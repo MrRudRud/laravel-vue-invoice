@@ -2,7 +2,7 @@
     width: 820px;
     margin: 50px auto;
     box-shadow: $box-shadow;
-
+    padding: 25px;
     &-body {
         padding-top: 25px;
     }
@@ -48,7 +48,7 @@
 }
 
 tfoot {
-    bordor-top: 2px solid $border-color;
+    border-top: 2px solid $border-color;
     tr {
         td {
             vertical-align: top;

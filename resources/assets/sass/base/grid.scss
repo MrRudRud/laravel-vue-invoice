@@ -13,7 +13,7 @@ $baseWidth: 4.166667%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0 0 0 -#{$half-gutter-width};
+    margin: 0 0 0 -#{$half-gutter-width}
 }
 
 .no-gutter {
@@ -22,7 +22,7 @@ $baseWidth: 4.166667%;
 
 @for $i from 1 through 24 {
     .col-#{$i}, .col-offset-#{$i} {
-        flex: 0 0 auto; 
+        flex: 0 0 auto;
         padding-left: $half-gutter-width;
         .no-gutter {
             padding-left: 0;
@@ -35,7 +35,6 @@ $baseWidth: 4.166667%;
         flex-basis: $baseWidth * $i;
         max-width: $baseWidth * $i;
     }
-
     .col-offset-#{$i} {
         margin-left: $baseWidth * $i;
     }
@@ -61,6 +60,6 @@ $baseWidth: 4.166667%;
     justify-content: space-around;
 }
 
-.flex-bettween {
+.flex-between {
     justify-content: space-between;
 }

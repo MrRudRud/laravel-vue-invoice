@@ -1040,7 +1040,7 @@ hr {
       justify-content: space-around;
 }
 
-.flex-bettween {
+.flex-between {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1301,6 +1301,7 @@ a.btn-primary {
   margin: 50px auto;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 25px;
 }
 
 .document-body {
@@ -1341,7 +1342,7 @@ a.btn-primary {
 }
 
 tfoot {
-  bordor-top: 2px solid #f2f2f2;
+  border-top: 2px solid #f2f2f2;
 }
 
 tfoot tr td {

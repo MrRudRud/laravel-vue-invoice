@@ -21,7 +21,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="item in model.data" :key="item.data">
+                    <tr v-for="item in model.data" :key="item.data" @click="detailsPage(item)">
                         <td class="w-1">{{item.id}}</td>
                         <td class="w-3">{{item.date}}</td>
                         <td class="w-3">{{item.number}}</td>
@@ -32,7 +32,7 @@
                 </tbody>
             </table>        
         </div>
-        <div class="panel-footer">
+        <div class="panel-footer flex-between">
             <div>
                 <small>Showing {{model.from}} - {{model.to}} of {{model.total}}</small>
             </div>
@@ -68,6 +68,9 @@
                 })
         },
         methods: {
+            detailsPage(item) {
+                this.$router.push(`/invoices/${item.id}`)
+            },
             setData(res) {
                 Vue.set(this.$data, 'model', res.data.results)
                 this.page = this.model.current_page
