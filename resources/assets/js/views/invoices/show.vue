@@ -4,7 +4,7 @@
         <span class="panel-title">{{model.number}}</span>
         <div>
             <router-link to="/invoices" class="btn">Back</router-link>
-            <router-link to="`/invoices/${model.id}/edit`" class="btn">Edit</router-link>
+            <router-link :to="`/invoices/${model.id}/edit`" class="btn">Edit</router-link>
             <button class="btn btn-error" @click="deleteItem">Delete</button>
         </div>
        </div>

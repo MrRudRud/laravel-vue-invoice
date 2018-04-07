@@ -4,7 +4,7 @@ namespace App\Helper;
 
 trait HasManyRelation {
 
-    public function storeHasMany($relation)
+    public function storeHasMany($relations)
     {
         $this->save();
 
@@ -16,7 +16,7 @@ trait HasManyRelation {
                 $newItems[] = $model->fill($item);
             }
 
-            //save
+            // save
             $this->{$key}()->saveMany($newItems);
         }
     }
@@ -25,40 +25,40 @@ trait HasManyRelation {
     {
         $this->save();
 
-        $parentKey = $this->getKeyName;
+        $parentKey = $this->getKeyName();
         $parentId = $this->getAttribute($parentKey);
 
         foreach($relations as $key => $items) {
-            $updateIds = [];
+            $updatedIds = [];
             $newItems = [];
 
             // 1. filter and update
-            foreach($items as $item){
+            foreach($items as $item) {
                 $model = $this->{$key}()->getModel();
                 $localKey = $model->getKeyName();
                 $foreignKey = $this->{$key}()->getForeignKeyName();
 
-                if(isset($item[$foreignKey])){
-                    $localId = $item[$localId];
+                if(isset($item[$localKey])) {
+                    $localId = $item[$localKey];
                     $found = $model->where($foreignKey, $parentId)
                         ->where($localKey, $localId)
                         ->first();
-                    
+
                     if($found) {
                         $found->fill($item);
                         $found->save();
                         $updatedIds[] = $localId;
-                    } else {
-                        $newItems[] = $model->fill($item);
                     }
+                } else {
+                    $newItems[] = $model->fill($item);
                 }
             }
 
-            // 2. delete non-update items
+            // 2. delete non-updated items
             $model = $this->{$key}()->getModel();
             $localKey = $model->getKeyName();
             $foreignKey = $this->{$key}()->getForeignKeyName();
-            $model->whereNotIn($localKey, $updateIds)
+            $model->whereNotIn($localKey, $updatedIds)
                 ->where($foreignKey, $parentId)
                 ->delete();
 
@@ -68,5 +68,4 @@ trait HasManyRelation {
             }
         }
     }
-
 }

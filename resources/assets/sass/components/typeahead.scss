@@ -1,6 +1,6 @@
 .typeahead {
     position: relative;
-    display: inline;
+    display: bloc;
     background: #fff;
     &-open {
         border-bottom: 0;
@@ -18,7 +18,7 @@
     &-selected {
         cursor: pointer;
         user-select: none;
-        display: flex !important;
+        display: flex!important;
         justify-content: space-between;
         line-height: 15px;
     }
@@ -26,7 +26,7 @@
     &-dropdown {
         width: 100%;
         position: absolute;
-        z-index: 45px;
+        z-index: 45;
         padding: 5px;
         background: #fff;
         border-right: 1px solid $border-color;
@@ -58,6 +58,7 @@
     &-list {
         display: block;
         margin: 0;
+        padding: 0px;
     }
 
     &-item {

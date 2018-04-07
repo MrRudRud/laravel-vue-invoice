@@ -10,7 +10,7 @@ class Invoice extends Model
     use HasManyRelation;
     
     Protected $fillable = [
-        'customer_id', 'date', 'due_date', 'discount', 'terms_and_conditions'
+        'customer_id', 'date', 'due_date', 'discount', 'terms_and_conditions', 'reference'
     ];
 
     Protected $guarded = ['number', 'sub_total', 'total'];
