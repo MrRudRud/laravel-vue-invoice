@@ -193,7 +193,7 @@
                 }
 
                 this.show = true
-
+                this.$bar.finish()
             },
             addNewLine() {
                 this.form.items.push({
@@ -219,7 +219,7 @@
                 this.form.items.splice(index, 1)
             },
             onCancel() {
-                if(this.$route.meta.mode = 'edit') {
+                if(this.$route.meta.mode === 'edit') {
                     this.$router.push(`${this.resource}/${this.form.id}`)
                 } else {
                     this.$router.push(`${this.resource}`)

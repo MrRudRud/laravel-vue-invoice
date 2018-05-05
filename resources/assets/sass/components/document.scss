@@ -45,19 +45,19 @@
             text-align: right;
         }
     }
-}
-
-tfoot {
-    border-top: 2px solid $border-color;
-    tr {
-        td {
-            vertical-align: top;
-            text-align: right;
-            padding: 5px;
-            &:nth-child(2n) {
-                font-weight: bold;
-                padding-left: 15px;
+    tfoot {
+        border-top: 2px solid $border-color;
+        tr {
+            td {
+                vertical-align: top;
+                text-align: right;
+                padding: 5px;
+                &:nth-child(2n) {
+                    font-weight: bold;
+                    padding-left: 15px;
+                }
             }
         }
-    }
+    }    
 }
+

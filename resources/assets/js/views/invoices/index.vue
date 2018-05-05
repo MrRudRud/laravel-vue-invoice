@@ -74,6 +74,7 @@
             setData(res) {
                 Vue.set(this.$data, 'model', res.data.results)
                 this.page = this.model.current_page
+                this.$bar.finish()
             },
             nextPage() {
                 if(this.model.next_page_url) {
